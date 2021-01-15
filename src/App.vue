@@ -1,32 +1,66 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <el-container>
+      <!-- 顶部导航栏 -->
+      <div class="topbar">
+        <div class="nav">
+          <ul>
+            <li></li>
+            <li>我的订单</li>
+            <li>购物车</li>
+          </ul>
+        </div>
+      </div>
+      <!-- 顶部导航栏END -->
+
+      <!-- 头部容器 -->
+      <el-header> </el-header>
+      <!-- 头部容器END -->
+
+      <!-- 主要区域容器 -->
+      <el-main>
+        <keep-alive>
+          <router-view />
+        </keep-alive>
+      </el-main>
+      <!-- 主要区域容器END -->
+
+      <!-- 底部容器 -->
+      <el-footer> </el-footer>
+      <!-- 底部容器END -->
+    </el-container>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 全局样式 */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  list-style: none;
+}
+
+/* 顶部导航栏样式 */
+.topbar {
+  height: 40px;
+  background-color: #3d3d3d;
+  margin-bottom: 20px;
+}
+.topbar .nav {
+  width: 1225px;
+  margin: 0 auto;
+}
+.topbar .nav ul {
+  float: right;
+}
+.topbar .nav li {
+  float: left;
+  height: 40px;
+  color: #b0b0b0;
+  font-size: 14px;
   text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  line-height: 40px;
+  margin-left: 20px;
 }
 </style>
